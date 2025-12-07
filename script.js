@@ -1,5 +1,4 @@
 // 1. Validáció
-
 const form = document.getElementById('reservationForm');
 
 if (form) {
@@ -11,6 +10,7 @@ if (form) {
     const datumInput = document.getElementById('datum');
     const idoInput = document.getElementById('ido');
     const tipusInput = document.getElementById('tipus');
+    const adatkezelesInput = document.getElementById('adatkezeles');
 
     const errorNev = document.getElementById('error-nev');
     const errorTel = document.getElementById('error-telefon');
@@ -19,6 +19,7 @@ if (form) {
     const errorDatum = document.getElementById('error-datum');
     const errorIdo = document.getElementById('error-ido');
     const errorTipus = document.getElementById('error-tipus');
+    const errorAdatkezeles = document.getElementById('error-adatkezeles');
 
     form.addEventListener('submit', function(event) {
         let isValid = true;
@@ -87,6 +88,11 @@ if (form) {
             isValid = false;
         }
 
+        if (!adatkezelesInput.checked) {
+            errorAdatkezeles.textContent = "A foglaláshoz el kell fogadnod a feltételeket!";
+            isValid = false;
+        }
+
         
         if (!isValid) {
             event.preventDefault();
@@ -97,7 +103,6 @@ if (form) {
 }
 
 // 2. Visszaszámláló
-
 const countdownElement = document.getElementById('countdown');
 
 if (countdownElement) {
