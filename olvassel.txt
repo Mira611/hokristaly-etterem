@@ -2,7 +2,7 @@ Készítő neve:
 Kiss Mira Blanka
 
 Működő weboldal URL címe:
-[IDE MÁSOLD BE A LINKET A GITHUBRÓL, AMIT A FELTÖLTÉS UTÁN KAPTÁL]
+https://mira611.github.io/hokristaly-etterem/
 
 Weboldal témájának rövid leírása:
 A weboldalam egy különleges, karácsonyi éttermet mutat be, amit maga a Mikulás és a felesége, Télanyó üzemeltetnek. Az oldalon bemutatom az éttermet, az étlapot, valamint egy működő online asztalfoglalási lehetőséget is kialakítottam.
@@ -20,3 +20,4 @@ Helye: A betűtípusok a HTML fájlok <head> részében vannak importálva és a
 
 Felhasznált külső források:
 A szöveges tartalom megírásában Google Gemini AI segített, illetve a képeket is vele generáltam.
+
