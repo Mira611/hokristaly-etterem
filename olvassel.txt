@@ -1,0 +1,22 @@
+Készítő neve:
+Kiss Mira Blanka
+
+Működő weboldal URL címe:
+[IDE MÁSOLD BE A LINKET A GITHUBRÓL, AMIT A FELTÖLTÉS UTÁN KAPTÁL]
+
+Weboldal témájának rövid leírása:
+A weboldalam egy különleges, karácsonyi éttermet mutat be, amit maga a Mikulás és a felesége, Télanyó üzemeltetnek. Az oldalon bemutatom az éttermet, az étlapot, valamint egy működő online asztalfoglalási lehetőséget is kialakítottam.
+
+Saját JavaScript kód helye és működése:
+A JavaScript kód a gyökérkönyvtárban található script.js fájlban van elhelyezve.
+A kód natív JavaScriptet használ (külső keretrendszer nélkül), és két fő feladatot lát el:
+Asztalfoglalás validáció: Az űrlap elküldésekor ellenőrzi a mezők helyességét. Hiba esetén a megfelelő mező alatt piros üzenettel jelzi a problémát, és megakadályozza a hibás küldést.
+Visszaszámláló: A rendszerdátum alapján kiszámolja a következő karácsonyig (dec. 25.) hátralévő időt, és ezt a főoldalon (index.html) másodpercenként frissítve jeleníti meg.
+
+Használt egyedi fonttípus és helye:
+A weboldal a Google Fonts szolgáltatást használja.
+Használt betűtípusok: Caveat (kézírásos stílus a címekhez) és Quicksand (kerekített stílus a szövegekhez).
+Helye: A betűtípusok a HTML fájlok <head> részében vannak importálva és a style.css fájlban vannak hozzárendelve az elemekhez.
+
+Felhasznált külső források:
+A szöveges tartalom megírásában Google Gemini AI segített, illetve a képeket is vele generáltam.

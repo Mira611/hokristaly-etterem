@@ -1,0 +1,823 @@
+/* 1. Alapbeállítások */
+:root {
+    --elsodleges-piros: #D42426;
+    --fenyozold: #165B33;
+    --arany: #F8B229;
+    --feher: #F0F0F0;
+    --sotetszurke: #333;
+}
+
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--feher);
+    color: var(--sotetszurke);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .arak, .kepkeret-jobb, .kepkeret-bal {
+    font-family: 'Caveat', cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gomb {
+    display: inline-block;
+    background-color: var(--elsodleges-piros);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.gomb:hover {
+    transform: scale(1.05);
+    background-color: var(--arany);
+    color: var(--sotetszurke);
+}
+
+/* 2. Fejléc */
+header {
+    background-color: var(--elsodleges-piros);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--arany);
+}
+
+/* 3. Lábléc */
+footer {
+    background-color: var(--fenyozold);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* 4.1. Főoldal - köszöntő */
+.koszonto {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('kepek/dinner-7585935_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.koszonto h2 {
+    color: var(--arany);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--fenyozold);
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 20px 0;
+    border: 2px solid var(--elsodleges-piros);
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-unit .number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--elsodleges-piros);
+    font-family: 'Caveat', cursive;
+    line-height: 1;
+}
+
+.time-unit .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--fenyozold);
+}
+
+/* 4.2. Főoldal - napi ajánlat */
+.napi-ajanlat {
+    padding: 60px 0;
+    background-color: #fff; 
+}
+
+.ajanlat-doboz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+    background-color: #fff0f0; 
+    padding: 40px 50px;
+    border-radius: 20px;
+    border: 2px dashed var(--elsodleges-piros);   /* szaggatott vonal*/
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    max-width: 950px;
+    margin: 30px auto;
+}
+
+.jelveny {
+    position: absolute;
+    top: -16px;
+    right: 40px;
+    background-color: var(--arany);
+    color: var(--sotetszurke);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 10;      /* z-index átnázáse!!*/
+}
+
+.ajanlat-kep-oszlop {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ajanlat-kep {
+    width: 380px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.ajanlat-kep:hover {
+    transform: scale(1.05);
+}
+
+.kep-gomb-tarolo {
+    margin-top: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+.kep-gomb-tarolo .gomb {
+    width: auto;
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+.ajanlat-szoveg {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.ajanlat-szoveg h3 {
+    font-size: 2.4rem;
+    color: var(--elsodleges-piros);
+    margin: 0 0 25px 0;
+    line-height: 1.2;
+}
+
+.ajanlat-szoveg p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.arak {
+    font-family: 'Caveat', cursive;
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: 100px;
+}
+
+.regi-ar {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.3rem;
+    margin-right: 15px;
+}
+
+.uj-ar {
+    color: var(--fenyozold);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+/* 4.3. Főoldal - csapat */
+.csapat {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--feher);
+}
+
+.csapat h2 {
+    font-size: 2.5rem;
+    color: var(--fenyozold);
+    margin-bottom: 10px;
+}
+
+.csapat-felirat {
+    margin-bottom: 40px;
+    font-style: italic;
+    color: #666;
+}
+
+.csapat-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.csapat-kartya {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-bottom: 5px solid var(--fenyozold);
+    transition: transform 0.3s;
+    width: 300px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.csapat-kartya:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--elsodleges-piros);
+}
+
+.profilkep {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    background-color: var(--feher);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.csapat-kartya h3 {
+    margin: 10px 0 5px;
+    font-size: 1.6rem;
+    font-family: 'Caveat', cursive;
+}
+
+.beosztas {
+    color: var(--elsodleges-piros);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.bemutatas {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* 4.4 Főoldal - vélemények */
+.velemenyek {
+    padding: 60px 0;
+    background-color: var(--fenyozold);
+    color: white;
+    text-align: center;
+    background-size: 30px 30px;
+}
+
+.velemenyek h2 {
+    color: var(--arany);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.velemeny-grid {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.velemeny-kartya {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.2);
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+
+.velemeny-fejlec {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.velemeny-profilkep {
+    font-size: 2.5rem;
+    background: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.csillagok {
+    color: var(--arany);
+    font-size: 0.9rem;
+}
+
+.velemeny-kartya p {
+    font-style: italic;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* 5. Aloldalak - alapbeállítás */
+.oldal-fejlec {
+    background-color: var(--fenyozold);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    background-size: 20px 20px;
+}
+
+.oldal-fejlec h2 {
+    color: var(--arany);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.oldal-fejlec p {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* 6. RÓLUNK */
+.rolunk-tartalom {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.tortenet-blokk {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.tortenet-blokk.forditott {
+    flex-direction: row-reverse;
+}
+
+.tortenet-szoveg {
+    flex: 1;
+}
+
+.tortenet-kep {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.kepkeret-jobb, 
+.kepkeret-bal {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    color: #555;
+    transition: transform 0.3s;
+    width: 250px;
+    display: block; 
+    border: 1px solid #eee;
+}
+
+.kepkeret-jobb {
+    transform: rotate(3deg);
+}
+
+.kepkeret-bal {
+    transform: rotate(-3deg);
+}
+
+.kepkeret-jobb:hover, 
+.kepkeret-bal:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 2;
+}
+
+.belso-kep {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.ertekek-szekcio {
+    margin-top: 50px;
+    text-align: center;
+    background-color: var(--feher);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.ertekek-szekcio h3 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.ertek-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ertek-kartya {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+}
+
+.ikon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.ertek-kartya h4 {
+    color: var(--fenyozold);
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+/* 7. Étlap */
+.etlap-tartalom {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.etlap-kategoria {
+    margin-bottom: 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--elsodleges-piros);
+}
+
+.etlap-kategoria h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed var(--fenyozold);    /* szaggatott vonal*/
+    padding-bottom: 10px;
+}
+
+.etlap-tetel {
+    margin-bottom: 20px;
+}
+
+.tetel-fejlec {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--fenyozold);
+}
+
+.tetel-nev {
+    flex-shrink: 0;
+}
+
+.pontok {
+    flex-grow: 1;
+    border-bottom: 2px dotted #ccc;
+    margin: 0 10px;
+}
+
+.tetel-ar {
+    flex-shrink: 0;
+    color: var(--elsodleges-piros);
+}
+
+.tetel-leiras {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* 8. Asztalfoglalás */
+.foglalas-szekcio {
+    padding: 50px 20px;
+}
+
+.urlap-keret {
+    background-color: white;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 5px;
+    border: 8px dashed var(--elsodleges-piros);
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.belyeg {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--fenyozold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(15deg);
+    border: 3px double var(--arany);
+}
+
+.belyeg-szoveg {
+    color: var(--arany);
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.urlap-csoport label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--fenyozold);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--arany);
+    background-color: #fffdf5;
+}
+
+.urlap-sor {
+    display: flex;
+    gap: 20px;
+}
+
+.kuldes-gomb {
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* 9. Kapcsolat */
+.kapcsolat-tartalom {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.kapcsolat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.info-kartya {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+}
+
+.info-kartya:hover {
+    transform: translateY(-5px);
+    border-color: var(--arany);
+}
+
+.info-kartya .kapcs-ikon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.kamu-terkep {
+    background-color: #e0f7fa;
+    height: 300px;
+    border-radius: 15px;
+    border: 4px dashed var(--fenyozold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.gyik-elem {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-left: 5px solid var(--elsodleges-piros);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* 10. Validációs hiba stílusok */
+input[type="text"], input[type="email"], input[type="tel"], 
+input[type="number"], input[type="date"], input[type="time"], 
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.urlap-sor {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.urlap-csoport {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--fenyozold);
+}
+
+.error-msg {
+    color: #dc3545;      
+    font-size: 0.85em;
+    margin-top: 5px;
+    height: 1.2em;     
+}
+
+.input-error {
+    border-color: #dc3545 !important;
+    background-color: #fff8f8;
+}
+/* 11. Reszponzivitás */
+@media (max-width: 850px) {
+    nav ul {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .koszonto h2 {
+        font-size: 2rem;
+    }
+
+    .ajanlat-doboz {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 60px;
+        gap: 30px;
+    }
+
+    .jelveny {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .ajanlat-kep-oszlop {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .ajanlat-kep {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+    }
+
+    .ajanlat-szoveg, 
+    .ajanlat-szoveg h3,
+    .kep-gomb-tarolo {
+        text-align: center;
+        padding-left: 0;
+        align-self: center;
+    }
+    
+    .ajanlat-szoveg h3,
+    .arak {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .kep-gomb-tarolo {
+        margin-right: 0; 
+    }
+
+    .urlap-sor {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .tortenet-blokk, .tortenet-blokk.forditott {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+}

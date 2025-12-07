@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hókristály Étterem - Északi-sarki Ízek</title>
+    <meta name="description" content="Hókristály Étterem - Az Északi-sark legvarázslatosabb ízei. Asztalfoglalás és ünnepi menü.">
+    <meta name="author" content="Kiss Mira Blanka">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="kepek/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>🔔 Hókristály Étterem</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Főoldal</a></li> 
+                    <li><a href="rolunk.html">Rólunk</a></li>
+                    <li><a href="etlap.html">Étlap</a></li>
+                    <li><a href="asztalfoglalas.html">Asztalfoglalás</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="koszonto">
+            <h2>Üdvözlünk az Északi-sark legfinomabb konyháján!</h2>
+            <p>Főszakács: Mrs. Claus | Nyitva: Egész évben (kivéve Dec 24. este)</p>
+            
+            <div class="countdown-box">
+                <h3>Karácsonyig hátralévő idő:</h3>
+                <div id="countdown"></div>
+            </div>
+    </section>
+
+    <section class="napi-ajanlat">
+        <div class="container ajanlat-doboz">
+            
+            <span class="jelveny">⭐ Mrs. Claus ajánlása ⭐</span>
+
+            <div class="ajanlat-kep-oszlop">
+                <img src="kepek/Csokimousse.jpg" alt="Karácsonyi Csokoládé Mámor" class="ajanlat-kep">
+                
+                <div class="kep-gomb-tarolo">
+                    <a href="asztalfoglalas.html" class="gomb">Asztalfoglalás</a>
+                </div>
+            </div>
+
+            <div class="ajanlat-szoveg">
+                <h3>Karácsonyi Csokoládé Mámor</h3>
+                <p>Tömény boldogság egy tányéron. Bársonyos étcsokoládé mousse, lágy piskóta és ehető aranypor. Ha megkóstolod, garantáltan újra hiszel a csodákban.</p>
+                
+                <div class="arak">
+                    <span class="regi-ar">1.800 🪙</span>
+                    <span class="uj-ar">1.450 🪙</span>
+                </div>
+
+            </div>
+        </div>
+    </section> 
+
+
+    <section class="csapat">
+    <div class="container">
+        <h2>Ismerd meg a csapatot!</h2>
+        <p class="csapat-felirat">Az Északi-sark válogatott legénysége.</p>
+        
+        <div class="csapat-grid">
+            
+            <div class="csapat-kartya">
+                <div class="profilkep">🤶</div> 
+                <h3>Mrs. Claus</h3>
+                <p class="beosztas">A Konyha Királynője</p>
+                <p class="bemutatas">Ő az étterem szíve és lelke, aki a manók segítségével gondoskodik arról, hogy minden vendég arcára mosolyt csaljon.</p>
+            </div>
+
+            <div class="csapat-kartya">
+                <div class="profilkep">🧝</div>
+                <h3>Havas Hugó</h3>
+                <p class="beosztas">Főpincér & Tányérzsonglőr</p>
+                <p class="bemutatas">Képes 12 forró csokit kivinni egyszerre, miközben rénszarvasokat terel. Borravalót csak csokiban fogad el.</p>
+            </div>
+
+            <div class="csapat-kartya">
+                <div class="profilkep">🦌</div>
+                <h3>Rudolf</h3>
+                <p class="beosztas">Logisztikai Igazgató</p>
+                <p class="bemutatas">Ködben is megtalálja a címedet a GPS-orrának köszönhetően. Fizetségként sárgarépát is elfogad.</p>
+            </div>
+
+            <div class="csapat-kartya">
+                <div class="profilkep">💂‍♂️</div>
+                <h3>Diótörő Őrnagy</h3>
+                <p class="beosztas">A bejárat őrzője</p>
+                <p class="bemutatas">Kicsit merev a tartása, de nagyon udvarias. Csak azt engedi be, aki rajta van a Jó Gyerekek listáján.</p>
+            </div>
+
+            <div class="csapat-kartya">
+                <div class="profilkep">🧚‍♀️</div>
+                <h3>Csengettyű</h3>
+                <p class="beosztas">Hangulatfelelős</p>
+                <p class="bemutatas">Fénytechnikus és Zenész. Ő kapcsolja fel a csillagokat a plafonon. Ha szomorú vendéget lát, addig repked körülötte, amíg el nem mosolyodik.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section class="velemenyek">
+        <div class="container">
+            <h2>Kik jártak már nálunk?</h2>
+            <div class="velemeny-grid">
+                
+                <div class="velemeny-kartya">
+                    <div class="velemeny-fejlec">
+                        <div class="velemeny-profilkep">🐰</div>
+                        <div>
+                            <h4>Húsvéti Nyúl</h4>
+                            <div class="csillagok">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p>"Minden falat varázslatos, de ha választani kellene, Rudolf répakrémlevese mindent visz!"</p>
+                </div>
+
+                <div class="velemeny-kartya">
+                    <div class="velemeny-fejlec">
+                        <div class="velemeny-profilkep">🧚‍♀️</div>
+                        <div>
+                            <h4>A Fogtündér</h4>
+                            <div class="csillagok">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p>"Szakmai ártalom, de imádom az édességeket. A mézeskalács itt egyszerűen varázslatos. (Ne felejtsetek el fogat mosni utána!)"</p>
+                </div>
+
+                <div class="velemeny-kartya">
+                    <div class="velemeny-fejlec">
+                        <div class="velemeny-profilkep">❄️</div>
+                        <div>
+                            <h4>Dér Jankó (Jack Frost)</h4>
+                            <div class="csillagok">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p>"Végre egy hely, ahol a fagylalt nem olvad el, mielőtt megenném! A Jégcsap-Kehely kötelező választás."</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hókristály Étterem. Minden jog fenntartva az Északi-sarkon.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

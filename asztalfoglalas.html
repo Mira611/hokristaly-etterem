@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asztalfoglalás - Hókristály Étterem</title>
+    <meta name="description" content="Foglalj asztalt a Hókristály Étteremben, amelyet maga a Mikulás és a Télanyó üzemeltet! Ünnepi hangulat, varázslatos menü és családbarát környezet.">
+    <meta name="author" content="Kiss Mira Blanka">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="kepek/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>🔔 Hókristály Étterem</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Főoldal</a></li>
+                    <li><a href="rolunk.html">Rólunk</a></li>
+                    <li><a href="etlap.html">Étlap</a></li>
+                    <li><a href="asztalfoglalas.html" class="active">Asztalfoglalás</a></li> 
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="oldal-fejlec">
+        <h2>Foglalj helyet a kandallónál!</h2>
+        <p>Töltsd ki az űrlapot, és a manók máris felírnak a foglalási listára.</p>
+    </section>
+
+    <section class="foglalas-szekcio">
+        <div class="container">
+            
+            <div class="urlap-keret">
+                <div class="belyeg">
+                    <span class="belyeg-szoveg">North Pole<br>Approved</span>
+                </div>
+
+                <h3>✉️ Foglalási Kérelem</h3>
+                
+                <form id="reservationForm" action="#" class="mikulas-urlap" novalidate>
+                    <div class="urlap-sor">
+                        <div class="urlap-csoport">
+                            <label for="nev">Teljes neved:</label>
+                            <input type="text" id="nev" name="nev" placeholder="Pl. Tóth Anna" required>
+                            <div id="error-nev" class="error-msg"></div>
+                        </div>
+                        <div class="urlap-csoport">
+                            <label for="telefon">Telefonszámod:</label>
+                            <input type="tel" id="telefon" name="telefon" placeholder="+36 30 123 4567" required>
+                            <div id="error-telefon" class="error-msg"></div>
+                        </div>
+                         <div class="urlap-csoport">
+                            <label for="email">E-mail címed:</label>
+                            <input type="email" id="email" name="email" placeholder="toth.anna@gmail.com" required>
+                            <div id="error-email" class="error-msg"></div>
+                        </div>
+                    </div>
+
+                    <div class="urlap-sor">
+                        <div class="urlap-csoport">
+                            <label for="datum">Mikor jönnétek?</label>
+                            <input type="date" id="datum" name="datum" required>
+                            <div id="error-datum" class="error-msg"></div>
+                        </div>
+                        <div class="urlap-csoport">
+                            <label for="ido">Hány órára?</label>
+                            <input type="time" id="ido" name="ido" min="10:00" max="22:00" required>
+                            <div id="error-ido" class="error-msg"></div>
+                        </div>
+                    </div>
+
+                    <div class="urlap-sor">
+                        <div class="urlap-csoport">
+                            <label for="letszam">Hány éhes száj?</label>
+                            <input type="number" id="letszam" name="letszam" min="1" max="20" placeholder="Fők száma" required>
+                            <div id="error-letszam" class="error-msg"></div>
+                        </div>
+                        <div class="urlap-csoport">
+                            <label for="tipus">Vendégek típusa:</label>
+                            <select id="tipus" name="tipus">
+                                <option value="human">Emberek</option>
+                                <option value="elf">Manók</option>
+                                <option value="reindeer">Rénszarvasok (Kültéri asztal)</option>
+                                <option value="mixed">Vegyes társaság</option>
+                            </select>
+                            <div id="error-tipus" class="error-msg"></div>
+                        </div>
+                    </div>
+
+                    <div class="urlap-csoport">
+                        <label for="uzenet">Különleges kérés a Mikuláshoz:</label>
+                        <textarea id="uzenet" name="uzenet" rows="4" placeholder="Pl. Szeretnénk személyesen találkozni a Mikulással."></textarea>
+                    </div>
+
+                    <button type="submit" class="gomb kuldes-gomb">Kérelem küldése az Északi-sarkra 📮</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hókristály Étterem. Minden jog fenntartva az Északi-sarkon.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
