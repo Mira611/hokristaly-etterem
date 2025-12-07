@@ -787,6 +787,12 @@ label {
     background-color: #fff8f8;
 }
 
+#error-adatkezeles {
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+}
+
 /* 11. Reszponzivitás */
 @media (max-width: 850px) {
 
@@ -893,4 +899,3 @@ label {
         transform: none;
     }
 }
-
