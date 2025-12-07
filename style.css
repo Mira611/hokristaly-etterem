@@ -662,6 +662,34 @@ input:focus, select:focus, textarea:focus {
     margin-top: 10px;
 }
 
+.checkbox-sor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.checkbox-sor input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.checkbox-sor label {
+    margin: 0;
+    font-weight: normal;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline;
+}
+
+.checkbox-sor a {
+    color: var(--elsodleges-piros);
+    text-decoration: underline;
+}
+
 /* 9. Kapcsolat */
 .kapcsolat-tartalom {
     padding: 50px 20px;
@@ -865,3 +893,4 @@ label {
         transform: none;
     }
 }
+
